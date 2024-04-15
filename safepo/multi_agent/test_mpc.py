@@ -644,7 +644,7 @@ class Runner:
                         one_episode_rewards[:, eval_i] = 0
                         eval_episode_costs.append(one_episode_costs[:, eval_i].mean().item())
                         one_episode_costs[:, eval_i] = 0
-            wandb.log({'RL Cost': torch.sum(episode_cost), 'RL Reward':torch.sum(episode_reward)})
+            wandb.log({'RL Cost': torch.sum(episode_cost)})
             
         for mpc_episode in range(self.config['mpc_episodes']):
             mpc_episode_rewards = 0
@@ -678,7 +678,7 @@ class Runner:
             print('mpc reward is:', torch.sum(mpc_episode_rewards))
             print('mpc reward is:', torch.sum(mpc_episode_rewards))
 
-            wandb.log({'MPC cost': torch.sum(mpc_episode_costs), 'MPC reward': torch.sum(mpc_episode_rewards)})
+            wandb.log({'MPC cost': torch.sum(mpc_episode_costs)})
 
     @torch.no_grad()
     def compute(self):
