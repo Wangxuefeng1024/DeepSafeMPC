@@ -46,9 +46,3 @@ If you find this paper helpful, please cite it:
       primaryClass={cs.LG}
 }
 </pre>
-
-## License
-
-See [LICENSE](LICENSE).
-
-SPDX-License-Identifier: MIT
