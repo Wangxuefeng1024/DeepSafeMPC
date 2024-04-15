@@ -1,2 +1,55 @@
 # DeepSafeMPC
- Implementation of DeepSafeMPC: Deep Learning-Based Model Predictive Control for Safe Multi-Agent Reinforcement Learning
+This is the code for experiments of [DeepSafeMPC: Deep Learning-Based Model Predictive Control for Safe Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2403.06397).
+
+## Setup
+
+- Python 3.6
+- Tensorflow >= 1.12
+- OpenAI Gym == 0.10.9
+- Clone and `pip install` [Sequential Social Dilemma](https://github.com/011235813/sequential_social_dilemma_games), which is a fork from the [original](https://github.com/eugenevinitsky/sequential_social_dilemma_games) open-source implementation.
+- Clone and `pip install` [LOLA](https://github.com/alshedivat/lola) if you wish to run this baseline.
+- Clone this repository and run `$ pip install -e .` from the root.
+
+
+## Navigation
+
+* `alg/` - Implementation of LIO and PG/AC baselines
+* `env/` - Implementation of the Escape Room game and wrappers around the SSD environment.
+* `results/` - Results of training will be stored in subfolders here. Each independent training run will create a subfolder that contains the final Tensorflow model, and reward log files. For example, 5 parallel independent training runs would create `results/cleanup/10x10_lio_0`,...,`results/cleanup/10x10_lio_4` (depending on configurable strings in config files).
+* `utils/` - Utility methods
+
+
+## Examples
+
+### Train LIO on Escape Room
+
+* Set config values in `alg/config_room_lio.py`
+* `cd` into the `alg` folder
+* Execute training script `$ python train_multiprocess.py lio er`. Default settings conduct 5 parallel runs with different seeds.
+* For a single run, execute `$ python train_lio.py er`.
+
+### Train LIO on Cleanup
+
+* Set config values in `alg/config_ssd_lio.py`
+* `cd` into the `alg` folder
+* Execute training script `$ python train_multiprocess.py lio ssd`.
+* For a single run, execute `$ python train_ssd.py`.
+
+## Citation
+
+<pre>
+@article{yang2020learning,
+  title={Learning to incentivize other learning agents},
+  author={Yang, Jiachen and Li, Ang and Farajtabar, Mehrdad and Sunehag, Peter and Hughes, Edward and Zha, Hongyuan},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  pages={15208--15219},
+  year={2020}
+}
+</pre>
+
+## License
+
+See [LICENSE](LICENSE).
+
+SPDX-License-Identifier: MIT
