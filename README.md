@@ -34,8 +34,6 @@ python test_mpc.py
 ```
 
 ## Citation
-If you find this paper helpful, please cite it:
-
 <pre>
 @misc{wang2024deepsafempc,
       title={DeepSafeMPC: Deep Learning-Based Model Predictive Control for Safe Multi-Agent Reinforcement Learning}, 
