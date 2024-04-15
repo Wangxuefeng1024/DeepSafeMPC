@@ -1,14 +1,16 @@
 # DeepSafeMPC
 This is the code for experiments of [DeepSafeMPC: Deep Learning-Based Model Predictive Control for Safe Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2403.06397).
 
+## Pre-requisites
+
+To use SafePO-Baselines, you need to install environments. Please refer to [Safety-Gymnasium](https://github.com/PKU-Alignment/safety-gymnasium) for more details on installation. Details regarding the installation of IsaacGym can be found [here](https://developer.nvidia.com/isaac-gym).
+
 ## Setup
 
-- Python 3.6
-- Tensorflow >= 1.12
-- OpenAI Gym == 0.10.9
-- Clone and `pip install` [Sequential Social Dilemma](https://github.com/011235813/sequential_social_dilemma_games), which is a fork from the [original](https://github.com/eugenevinitsky/sequential_social_dilemma_games) open-source implementation.
-- Clone and `pip install` [LOLA](https://github.com/alshedivat/lola) if you wish to run this baseline.
-- Clone this repository and run `$ pip install -e .` from the root.
+- Python 3.8
+- [Safety-Gymnasium](https://github.com/PKU-Alignment/safety-gymnasium)
+- [MAMuJoCo](https://github.com/schroederdewitt/multiagent_mujoco)
+- PyTorch 1.13
 
 
 ## Navigation
